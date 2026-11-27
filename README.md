@@ -8,15 +8,15 @@ An interactive companion to a study of public discussion about online learning i
 
 - Select an individual video, the full YouTube sample, or an engagement group.
 - Compare VADER classifications at ±0.05, ±0.10, and ±0.20.
-- Browse Academia Stack Exchange questions by theme and follow links to their public source pages.
+- Explore published Facebook findings by category and follow the study source.
 - Download the currently selected aggregate summary as CSV.
 
 ## Study boundaries
 
-The YouTube sample contains 82 retained comments across eight videos published January–September 2026. The historical forum sample contains 11 questions posted in 2021–2022. The two samples describe different contribution types and are compared qualitatively. Contributions and inferred tone describe this selected sample. The public app contains aggregate measurements and paraphrased forum descriptions.
+The YouTube sample contains 82 retained comments across eight videos published January–September 2026. The Facebook comparison summarizes Vallee’s published findings from 125 comments and replies to a September 2020 discussion. Categories can overlap. The sources use different periods and coding procedures, so the comparison is qualitative. The app contains aggregate evidence.
 
 ## Run locally
 
 Open `index.html` in a modern browser. It is self-contained and requires no dependencies, API key, or server. GitHub Pages publishes the root of `main`.
 
-[YouTube Data API](https://developers.google.com/youtube/v3) · [Academia Stack Exchange source tag](https://academia.stackexchange.com/questions/tagged/online-learning?tab=Newest) · [VADER paper](https://ojs.aaai.org/index.php/ICWSM/article/view/14550)
+[YouTube Data API](https://developers.google.com/youtube/v3) · [Vallee’s Facebook study](https://roam.macewan.ca/items/ffb89fea-2937-44ac-a936-19a9aa67c0e8) · [VADER paper](https://ojs.aaai.org/index.php/ICWSM/article/view/14550)
