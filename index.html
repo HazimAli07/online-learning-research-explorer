@@ -45,11 +45,11 @@ footer{margin-top:2.2rem;padding:1rem 0 2rem;border-top:1px solid var(--line)}
 @media(max-width:720px){header{padding-top:2.1rem}.charts{grid-template-columns:1fr;gap:1.4rem}th,td{padding:.42rem .38rem}}
 @media print{body{background:white}.tabs,fieldset,.action{display:none}header{padding:.6rem 0}main,header,footer{width:100%}}
 </style></head><body>
-<header><h1>Online Learning Research Explorer</h1><p>Examine the evidence behind an INFO57086 study of YouTube comments and Academia Stack Exchange questions.</p></header>
+<header><h1>Online Learning Research Explorer</h1><p>Examine the evidence behind an INFO57086 study of YouTube comments and published Facebook findings.</p></header>
 <main>
 <nav class="tabs" role="tablist" aria-label="Research platforms">
 <button id="youtube-tab" role="tab" aria-selected="true" aria-controls="youtube" tabindex="0">YouTube</button>
-<button id="forum-tab" role="tab" aria-selected="false" aria-controls="forum" tabindex="-1">Academia Stack Exchange</button>
+<button id="facebook-tab" role="tab" aria-selected="false" aria-controls="facebook" tabindex="-1">Facebook</button>
 </nav>
 <section id="youtube" role="tabpanel" aria-labelledby="youtube-tab">
 <h2>Sentiment, themes and engagement</h2>
@@ -65,18 +65,18 @@ footer{margin-top:2.2rem;padding:1rem 0 2rem;border-top:1px solid var(--line)}
 <thead><tr><th scope="col">Video</th><th scope="col" class="number">Sample n</th><th scope="col" class="number">Comments/1,000</th><th scope="col" class="number">Positive</th><th scope="col" class="number">Neutral</th><th scope="col" class="number">Negative</th></tr></thead><tbody id="video-table"></tbody></table></div>
 <details><summary>How to read these measures</summary><p>VADER classifies apparent comment tone. The cutoff changes which scores count as neutral. Theme counts represent comments that matched specific phrases. A comment can match several phrases or none. Comments per 1,000 views uses the lifetime statistics, while the analyzed comments are recent, accessible top-level posts. The median engagement rate was 5.55 comments per 1,000 views.</p></details>
 </section>
-<section id="forum" role="tabpanel" aria-labelledby="forum-tab" hidden>
-<h2>Questions about online learning</h2>
-<p class="muted">Eleven selected forum questions from 2021–2022. The study coded topics from question bodies and used this sample for historical context.</p>
-<fieldset aria-label="Forum theme filters"><label>Filter questions by theme<select id="forum-theme"><option value="all">All themes</option></select></label><button type="button" class="action" id="forum-export">Download summary CSV</button></fieldset>
-<div id="forum-summary" class="summary" aria-live="polite"></div>
-<h3>Theme counts for the filtered questions</h3><div id="forum-chart"></div>
-<div class="scroll"><table><caption id="forum-caption">Paraphrased question descriptions and sources.</caption><thead><tr><th scope="col">Question</th><th scope="col">Published</th><th scope="col">Description</th></tr></thead><tbody id="forum-table"></tbody></table></div>
-<details><summary>How the two platforms relate</summary><p>A forum question often begins with a problem and has room for context. A YouTube comment can simply thank a creator. The samples cover different periods and use different units and coding methods. Compare the topics qualitatively.</p></details>
+<section id="facebook" role="tabpanel" aria-labelledby="facebook-tab" hidden>
+<h2>Published Facebook findings</h2>
+<p class="muted">Vallee (2023) examined 125 comments and replies to a September 2020 Facebook post about remote learning. The explorer uses the published aggregates.</p>
+<fieldset aria-label="Facebook category filters"><label>Category<select id="facebook-category"><option value="all">All categories</option></select></label><button type="button" class="action" id="facebook-export">Download summary CSV</button></fieldset>
+<div id="facebook-summary" class="summary" aria-live="polite"></div>
+<h3>Share of comments by category</h3><div id="facebook-chart"></div>
+<div class="scroll"><table><caption>Reported shares and reconstructed counts. Comments can match several categories.</caption><thead><tr><th scope="col">Category</th><th scope="col" class="number">Comments</th><th scope="col" class="number">Share</th><th scope="col">Context</th></tr></thead><tbody id="facebook-table"></tbody></table></div>
+<details><summary>How the two platforms relate</summary><p>YouTube was independently sampled and scored. The 2020 Facebook study used a single problem-focused student discussion and its own thematic codes. Use the sources to compare topics qualitatively.</p></details>
 </section>
 </main>
-<footer><small>INFO57086 · Public-source research companion · Counts refer to the sampled records.</small><p><a href="https://developers.google.com/youtube/v3">YouTube Data API</a> · <a href="https://academia.stackexchange.com/questions/tagged/online-learning?tab=Newest">Academia Stack Exchange</a> · <a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14550">VADER method</a></p></footer>
-<script id="study-data" type="application/json">{"videos": [{"key": "V01", "n": 6, "rate": 12.89134438305709, "date": "2026-01-18", "sentiment": {"0.05": {"Positive": 6, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 5, "Neutral": 1, "Negative": 0}, "0.20": {"Positive": 5, "Neutral": 1, "Negative": 0}}, "themes": {"Affordability": 1, "Access and convenience": 1}}, {"key": "V02", "n": 1, "rate": 13.986013986013987, "date": "2026-07-19", "sentiment": {"0.05": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 1, "Neutral": 0, "Negative": 0}}, "themes": {}}, {"key": "V03", "n": 28, "rate": 9.16289592760181, "date": "2026-03-06", "sentiment": {"0.05": {"Positive": 22, "Neutral": 4, "Negative": 2}, "0.10": {"Positive": 22, "Neutral": 4, "Negative": 2}, "0.20": {"Positive": 20, "Neutral": 6, "Negative": 2}}, "themes": {"Support and feedback": 1, "Assessment and workload": 3, "Flexibility and pacing": 2, "Credential and career concerns": 2, "Focus and self-discipline": 1}}, {"key": "V04", "n": 12, "rate": 5.564964916525526, "date": "2026-06-17", "sentiment": {"0.05": {"Positive": 11, "Neutral": 0, "Negative": 1}, "0.10": {"Positive": 11, "Neutral": 0, "Negative": 1}, "0.20": {"Positive": 11, "Neutral": 0, "Negative": 1}}, "themes": {"Access and convenience": 1}}, {"key": "V05", "n": 29, "rate": 5.538248528902734, "date": "2026-08-29", "sentiment": {"0.05": {"Positive": 21, "Neutral": 6, "Negative": 2}, "0.10": {"Positive": 19, "Neutral": 8, "Negative": 2}, "0.20": {"Positive": 19, "Neutral": 8, "Negative": 2}}, "themes": {"Affordability": 2, "Support and feedback": 1, "Flexibility and pacing": 1, "Assessment and workload": 1}}, {"key": "V06", "n": 2, "rate": 0.3235198964736331, "date": "2026-03-31", "sentiment": {"0.05": {"Positive": 2, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 2, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 2, "Neutral": 0, "Negative": 0}}, "themes": {}}, {"key": "V07", "n": 1, "rate": 5.181347150259067, "date": "2026-02-18", "sentiment": {"0.05": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 1, "Neutral": 0, "Negative": 0}}, "themes": {"Isolation and limited interaction": 1, "Affordability": 1}}, {"key": "V08", "n": 3, "rate": 0.7984669434685404, "date": "2026-03-11", "sentiment": {"0.05": {"Positive": 2, "Neutral": 0, "Negative": 1}, "0.10": {"Positive": 2, "Neutral": 0, "Negative": 1}, "0.20": {"Positive": 2, "Neutral": 0, "Negative": 1}}, "themes": {"Flexibility and pacing": 1}}], "themeNames": ["Flexibility and pacing", "Access and convenience", "Affordability", "Replay and resources", "Isolation and limited interaction", "Focus and self-discipline", "Technology or connectivity", "Support and feedback", "Assessment and workload", "Credential and career concerns"], "forum": {"n": 11, "themes": {"Support and feedback": 3, "Focus and self-discipline": 3, "Replay and resources": 3, "Credential and career concerns": 1, "Isolation and limited interaction": 2, "Technology or connectivity": 2, "Assessment and workload": 4, "Access and convenience": 1, "Flexibility and pacing": 1}, "posts": [{"id": 190048, "date": "2022-10-27", "themes": ["Support and feedback"], "description": "A learner asks how to interpret an instructor response to a weekly online reflection."}, {"id": 189694, "date": "2022-10-18", "themes": ["Focus and self-discipline", "Replay and resources"], "description": "A learner divides recorded lectures into shorter parts to maintain attention."}, {"id": 182331, "date": "2022-02-13", "themes": ["Credential and career concerns"], "description": "A prospective applicant asks whether a distance master’s can satisfy doctoral entry requirements."}, {"id": 181257, "date": "2022-01-16", "themes": ["Isolation and limited interaction", "Support and feedback"], "description": "An instructor considers alternatives to an online discussion board for peer help and moderated discussion."}, {"id": 180795, "date": "2022-01-02", "themes": ["Technology or connectivity", "Assessment and workload"], "description": "A technology conversion issue is reported to affect a remotely submitted test."}, {"id": 180242, "date": "2021-12-16", "themes": ["Support and feedback", "Assessment and workload"], "description": "A learner questions the alignment between videos, instruction and the assessed material."}, {"id": 178592, "date": "2021-11-30", "themes": ["Isolation and limited interaction"], "description": "A remote learner asks how to meet classmates and arrange shared study."}, {"id": 176706, "date": "2021-10-15", "themes": ["Access and convenience", "Replay and resources"], "description": "A post asks why institutions restrict online lecture notes to signed-in students."}, {"id": 173893, "date": "2021-08-27", "themes": ["Focus and self-discipline", "Assessment and workload"], "description": "A learner seeks ways to manage lengthy screen time and overlapping online classes."}, {"id": 171092, "date": "2021-07-14", "themes": ["Flexibility and pacing", "Focus and self-discipline", "Replay and resources"], "description": "A participant values flexible playback and struggles to concentrate in live online sessions."}, {"id": 164158, "date": "2021-03-19", "themes": ["Technology or connectivity", "Assessment and workload"], "description": "A learner reports technical and time pressures in the submission of online quizzes."}]}, "thresholds": ["0.05", "0.10", "0.20"]}</script>
+<footer><small>INFO57086 · Public-source research companion · Counts refer to the sampled records.</small><p><a href="https://developers.google.com/youtube/v3">YouTube Data API</a> · <a href="https://roam.macewan.ca/items/ffb89fea-2937-44ac-a936-19a9aa67c0e8">Facebook study by Vallee</a> · <a href="https://ojs.aaai.org/index.php/ICWSM/article/view/14550">VADER method</a></p></footer>
+<script id="study-data" type="application/json">{"videos": [{"key": "V01", "n": 6, "rate": 12.89134438305709, "date": "2026-01-18", "sentiment": {"0.05": {"Positive": 6, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 5, "Neutral": 1, "Negative": 0}, "0.20": {"Positive": 5, "Neutral": 1, "Negative": 0}}, "themes": {"Affordability": 1, "Access and convenience": 1}}, {"key": "V02", "n": 1, "rate": 13.986013986013987, "date": "2026-07-19", "sentiment": {"0.05": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 1, "Neutral": 0, "Negative": 0}}, "themes": {}}, {"key": "V03", "n": 28, "rate": 9.16289592760181, "date": "2026-03-06", "sentiment": {"0.05": {"Positive": 22, "Neutral": 4, "Negative": 2}, "0.10": {"Positive": 22, "Neutral": 4, "Negative": 2}, "0.20": {"Positive": 20, "Neutral": 6, "Negative": 2}}, "themes": {"Support and feedback": 1, "Assessment and workload": 3, "Flexibility and pacing": 2, "Credential and career concerns": 2, "Focus and self-discipline": 1}}, {"key": "V04", "n": 12, "rate": 5.564964916525526, "date": "2026-06-17", "sentiment": {"0.05": {"Positive": 11, "Neutral": 0, "Negative": 1}, "0.10": {"Positive": 11, "Neutral": 0, "Negative": 1}, "0.20": {"Positive": 11, "Neutral": 0, "Negative": 1}}, "themes": {"Access and convenience": 1}}, {"key": "V05", "n": 29, "rate": 5.538248528902734, "date": "2026-08-29", "sentiment": {"0.05": {"Positive": 21, "Neutral": 6, "Negative": 2}, "0.10": {"Positive": 19, "Neutral": 8, "Negative": 2}, "0.20": {"Positive": 19, "Neutral": 8, "Negative": 2}}, "themes": {"Affordability": 2, "Support and feedback": 1, "Flexibility and pacing": 1, "Assessment and workload": 1}}, {"key": "V06", "n": 2, "rate": 0.3235198964736331, "date": "2026-03-31", "sentiment": {"0.05": {"Positive": 2, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 2, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 2, "Neutral": 0, "Negative": 0}}, "themes": {}}, {"key": "V07", "n": 1, "rate": 5.181347150259067, "date": "2026-02-18", "sentiment": {"0.05": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.10": {"Positive": 1, "Neutral": 0, "Negative": 0}, "0.20": {"Positive": 1, "Neutral": 0, "Negative": 0}}, "themes": {"Isolation and limited interaction": 1, "Affordability": 1}}, {"key": "V08", "n": 3, "rate": 0.7984669434685404, "date": "2026-03-11", "sentiment": {"0.05": {"Positive": 2, "Neutral": 0, "Negative": 1}, "0.10": {"Positive": 2, "Neutral": 0, "Negative": 1}, "0.20": {"Positive": 2, "Neutral": 0, "Negative": 1}}, "themes": {"Flexibility and pacing": 1}}], "themeNames": ["Flexibility and pacing", "Access and convenience", "Affordability", "Replay and resources", "Isolation and limited interaction", "Focus and self-discipline", "Technology or connectivity", "Support and feedback", "Assessment and workload", "Credential and career concerns"], "facebook": {"author": "Kasandra Vallee", "year": 2023, "post_date": "2020-09-25", "n": 125, "source": "https://roam.macewan.ca/server/api/core/bitstreams/2241b39b-1fb8-4879-8075-0b125f284e43/content", "categories": [["Work overload", 44, "Assignments and reading demands"], ["Instructor issues", 35, "Communication, guidance and teaching interactions"], ["Course organization", 19, "Difficulty navigating course structure and materials"], ["Burnout", 18, "Stress and reduced capacity to keep up"], ["Fees", 16, "Tuition, campus charges and required materials"], ["Other concerns", 11, "Social connection, mental health and competing responsibilities"]], "reported_percentages": [35.2, 28.0, 15.2, 14.4, 12.8, 8.8]}, "thresholds": ["0.05", "0.10", "0.20"]}</script>
 <script>
 'use strict';
 const model = JSON.parse(document.getElementById('study-data').textContent);
@@ -94,14 +94,6 @@ function selectedVideos(selection) {
   if (selection === 'above') return model.videos.filter(video => video.rate > median);
   if (selection === 'below') return model.videos.filter(video => video.rate <= median);
   return model.videos.filter(video => video.key === selection);
-}
-
-function countThemes(themeLists) {
-  const counts = new Map();
-  for (const themes of themeLists) {
-    for (const label of themes) counts.set(label, (counts.get(label) || 0) + 1);
-  }
-  return [...counts.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
 }
 
 function countVideoThemes(videos) {
@@ -138,18 +130,19 @@ function renderYouTube() {
     [video.n,video.rate.toFixed(2),...labels.map(label=>video.sentiment[state.cutoff][label])].map(v=>'<td class="number">'+v+'</td>').join('')+'</tr>').join('');
 }
 
-function forumState() {
-  const filter = el('forum-theme').value;
-  const posts = model.forum.posts.filter(post=>filter==='all'||post.themes.includes(filter));
-  return {posts, themes:countThemes(posts.map(post=>post.themes))};
+function facebookState() {
+  const filter = el('facebook-category').value;
+  return model.facebook.categories.filter(([label])=>filter==='all'||filter===label);
 }
 
-function renderForum() {
-  const state = forumState();
-  summary('forum-summary',[[state.posts.length,'Selected questions'],[state.themes.length,'Themes present']]);
-  el('forum-chart').innerHTML = chart(state.themes,state.posts.length);
-  el('forum-table').innerHTML = state.posts.map(post =>
-    '<tr><th scope="row"><a href="https://academia.stackexchange.com/questions/'+Number(post.id)+'">'+Number(post.id)+'</a></th><td>'+esc(post.date)+'</td><td>'+esc(post.description)+'</td></tr>'
+function renderFacebook() {
+  const categories = facebookState();
+  const total = model.facebook.n;
+  summary('facebook-summary',[[total,'Comments and replies'],[categories.length,'Categories shown']]);
+  el('facebook-chart').innerHTML = chart(categories.map(([label,n])=>[label,n]),total,true);
+  el('facebook-table').innerHTML = categories.map(([label,n,description]) =>
+    '<tr><th scope="row">'+esc(label)+'</th><td class="number">'+n+
+    '</td><td class="number">'+pct(n,total)+'</td><td>'+esc(description)+'</td></tr>'
   ).join('');
 }
 
@@ -166,7 +159,7 @@ function download(filename, rows) {
 }
 
 function chooseTab(tab,focus=false) {
-  const tabs = [el('youtube-tab'),el('forum-tab')];
+  const tabs = [el('youtube-tab'),el('facebook-tab')];
   for (const item of tabs) {
     const active = item === tab;
     item.setAttribute('aria-selected', String(active));
@@ -176,34 +169,33 @@ function chooseTab(tab,focus=false) {
   if (focus) tab.focus();
 }
 
-for (const [index,id] of ['youtube-tab','forum-tab'].entries()) {
+for (const [index,id] of ['youtube-tab','facebook-tab'].entries()) {
   const tab = el(id);
   tab.addEventListener('click',()=>chooseTab(tab));
   tab.addEventListener('keydown',event=>{
     if (['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
       event.preventDefault();
       const other = event.key==='Home' ? 0 : event.key==='End' ? 1 : 1-index;
-      chooseTab(el(['youtube-tab','forum-tab'][other]),true);
+      chooseTab(el(['youtube-tab','facebook-tab'][other]),true);
     }
   });
 }
 
 el('video-options').innerHTML = model.videos.map(video=>'<option value="'+esc(video.key)+'">'+esc(video.key)+'</option>').join('');
-el('forum-theme').insertAdjacentHTML('beforeend',Object.keys(model.forum.themes).sort().map(theme=>'<option value="'+esc(theme)+'">'+esc(theme)+'</option>').join(''));
+el('facebook-category').insertAdjacentHTML('beforeend',model.facebook.categories.map(([label])=>'<option value="'+esc(label)+'">'+esc(label)+'</option>').join(''));
 el('sample').addEventListener('change',renderYouTube);
 el('threshold').addEventListener('change',renderYouTube);
-el('forum-theme').addEventListener('change',renderForum);
+el('facebook-category').addEventListener('change',renderFacebook);
 el('youtube-export').addEventListener('click',()=>{
   const {cutoff,videos} = youtubeState();
   download('youtube-aggregate-summary.csv', [['video','retained_comments','comments_per_1000_views','vader_cutoff',...labels],
     ...videos.map(v=>[v.key,v.n,v.rate.toFixed(4),cutoff,...labels.map(label=>v.sentiment[cutoff][label])])]);
 });
-el('forum-export').addEventListener('click',()=>{
-  const {posts,themes} = forumState();
-  download('academia-aggregate-summary.csv',[['theme','questions_with_theme','filtered_sample_n'],
-    ...themes.map(([name,n])=>[name,n,posts.length])]);
+el('facebook-export').addEventListener('click',()=>{
+  const total=model.facebook.n;
+  download('facebook-published-themes.csv',[['category','comments_with_category','published_sample_n','percent'],
+    ...facebookState().map(([label,n])=>[label,n,total,(100*n/total).toFixed(1)])]);
 });
 renderYouTube();
-renderForum();
+renderFacebook();
 </script></body></html>
-
